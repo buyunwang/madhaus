@@ -2,7 +2,6 @@ export const colors = {
   // Backgrounds
   bgPrimary: '#0D1117',
   bgCard: '#141C26',
-  bgCardHover: '#1C2533',
 
   // Borders
   borderCard: '#2A3142',
@@ -21,6 +20,9 @@ export const colors = {
   positive: '#10B981',
   negative: '#EF4444',
   info: '#06B6D4',
+
+  // Overlays
+  whiteAlpha5: 'rgba(255, 255, 255, 0.05)',
 } as const;
 
 export type ColorToken = keyof typeof colors;

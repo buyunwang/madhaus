@@ -34,8 +34,8 @@ export function RewardBreakdown({ breakdown, maxCap }: RewardBreakdownProps) {
 
               <ProgressBar 
                 progress={percentage} 
-                color="#e8682a" 
-                backgroundColor="rgba(255, 255, 255, 0.05)"
+                color={colors.brandOrange} 
+                backgroundColor={colors.whiteAlpha5}
               />
             </View>
           );

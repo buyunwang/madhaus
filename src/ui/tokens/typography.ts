@@ -1,6 +1,6 @@
 import { TextStyle } from 'react-native';
 
-export const typography: Record<string, TextStyle> = {
+export const typography = {
   headingLg: { fontFamily: 'NunitoSans_800ExtraBold', fontSize: 28, letterSpacing: -0.5 },
   headingMd: { fontFamily: 'NunitoSans_700Bold', fontSize: 22 },
   headingSm: { fontFamily: 'NunitoSans_700Bold', fontSize: 18 },
@@ -15,6 +15,6 @@ export const typography: Record<string, TextStyle> = {
   caption: { fontFamily: 'NunitoSans_600SemiBold', fontSize: 11 },
   money: { fontFamily: 'NunitoSans_900Black', fontSize: 24, fontVariant: ['tabular-nums'] },
   moneyLg: { fontFamily: 'NunitoSans_900Black', fontSize: 36, fontVariant: ['tabular-nums'] },
-} as const;
+} as const satisfies Record<string, TextStyle>;
 
 export type TypographyToken = keyof typeof typography;
