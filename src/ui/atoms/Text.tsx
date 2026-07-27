@@ -15,8 +15,11 @@ export function Text({
   style,
   ...props
 }: TextProps) {
+  const isHeading = variant.startsWith('heading');
+
   return (
     <RNText
+      accessibilityRole={isHeading ? 'header' : undefined}
       style={[
         typography[variant],
         { color: colors[color] },

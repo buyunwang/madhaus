@@ -6,12 +6,14 @@ interface BraccoLogoProps extends SvgProps {
   width?: number;
   height?: number;
   color?: string;
+  accessibilityLabel?: string;
 }
 
 export function BraccoLogo({
   width = 110,
   height = 21,
   color = colors.textPrimary,
+  accessibilityLabel = "Bracco Logo",
   ...props
 }: BraccoLogoProps) {
   return (
@@ -19,6 +21,9 @@ export function BraccoLogo({
       viewBox="-10.5 -2 766 146"
       width={width}
       height={height}
+      accessible={true}
+      accessibilityRole="image"
+      accessibilityLabel={accessibilityLabel}
       {...props}
     >
       <Path

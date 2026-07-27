@@ -39,7 +39,13 @@ export function ProgressBar({
   });
 
   return (
-    <View style={[styles.container, { backgroundColor }, style]} {...props}>
+    <View 
+      style={[styles.container, { backgroundColor }, style]} 
+      accessible={true}
+      accessibilityRole="progressbar"
+      accessibilityValue={{ min: 0, max: 100, now: initialProgress }}
+      {...props}
+    >
       <Animated.View style={[styles.fill, { backgroundColor: color }, animatedStyle]} />
     </View>
   );
