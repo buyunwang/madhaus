@@ -28,8 +28,8 @@ export function RewardBreakdown({ breakdown, maxCap }: RewardBreakdownProps) {
           return (
             <View key={tier.id} style={styles.row}>
               <View style={styles.rowHeader}>
-                <Text variant="bodySm" color="textSecondary">{tier.label}</Text>
-                <Text variant="bodySm" color="textPrimary">{formatCurrency(amount, 'USD')}</Text>
+                <Text variant="body" color="textSecondary">{tier.label}</Text>
+                <Text variant="body" color="textPrimary">{formatCurrency(amount, 'USD')}</Text>
               </View>
 
               <ProgressBar 
