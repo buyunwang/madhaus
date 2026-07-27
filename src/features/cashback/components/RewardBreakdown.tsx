@@ -1,6 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 import { Text } from '../../../ui/atoms/Text';
-import { spacing, radii, colors } from '../../../ui/tokens';
+import { ProgressBar } from '../../../ui/atoms/ProgressBar';
+import { spacing, colors } from '../../../ui/tokens';
 import { formatCurrency } from '../../../utils/formatCurrency';
 
 interface RewardBreakdownProps {
@@ -31,14 +32,11 @@ export function RewardBreakdown({ breakdown, maxCap }: RewardBreakdownProps) {
                 <Text variant="bodySm" color="textPrimary">{formatCurrency(amount, 'USD')}</Text>
               </View>
 
-              <View style={styles.barBackground}>
-                <View
-                  style={[
-                    styles.barFill,
-                    { width: `${percentage}%`, backgroundColor: '#e8682a' }
-                  ]}
-                />
-              </View>
+              <ProgressBar 
+                progress={percentage} 
+                color="#e8682a" 
+                backgroundColor="rgba(255, 255, 255, 0.05)"
+              />
             </View>
           );
         })}
@@ -64,15 +62,5 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: spacing.xs,
-  },
-  barBackground: {
-    height: 8,
-    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-    borderRadius: radii.full,
-    overflow: 'hidden',
-  },
-  barFill: {
-    height: '100%',
-    borderRadius: radii.full,
   },
 });
